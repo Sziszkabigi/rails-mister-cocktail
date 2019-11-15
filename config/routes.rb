@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :cocktails
+  resources :cocktails do
+    resources :doses
+  end
   # get 'cocktails', to: 'cocktails#index'
   # post 'cocktails', to: 'cocktails#create'
   # get 'cocktails/new', to: 'cocktails#new', as: :new_cocktail
@@ -9,4 +11,5 @@ Rails.application.routes.draw do
   # delete 'cocktails/:id', to: 'cocktails#destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'cocktails#home'
 end

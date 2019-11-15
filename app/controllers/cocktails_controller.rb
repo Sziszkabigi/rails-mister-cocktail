@@ -15,8 +15,10 @@ class CocktailsController < ApplicationController
   end
 
   def create
-     @cocktail = Cocktail.new(cocktail_params)
-     if @cocktail.save
+    # save the data from the form in a Cocktail instance
+    @cocktail = Cocktail.new(cocktail_params)
+    # save it in the DB
+    if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
       render :new
@@ -33,8 +35,8 @@ class CocktailsController < ApplicationController
   end
 
   def delete
-    #@cocktail.destroy
-    #redirect_to cocktail_path
+    @@doses.destroy
+    redirect_to cocktail_path
   end
 
   def cocktail_params
