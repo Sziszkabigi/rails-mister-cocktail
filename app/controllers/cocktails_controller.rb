@@ -34,10 +34,6 @@ class CocktailsController < ApplicationController
     #cocktail_to cocktail_path(@cocktail)
   end
 
-  def delete
-    @@doses.destroy
-    redirect_to cocktail_path
-  end
 
   def cocktail_params
     params.require(:cocktail).permit(:name)

@@ -2,7 +2,7 @@
   <h1><%= @cocktail.name %></h1>
     <ul>
       <% @cocktail.doses.each do |dose| %>
-        <p>ingredients:<%= dose.ingredient.name %> dose: <%= dose.description %>
+        <p>Ingredients:<%= dose.ingredient.name %> dose: <%= dose.description %>
           <%= link_to 'delete', cocktail_dose_path([@cocktail, dose]), method: 'delete',class: "btn btn-success" %>
         </p>
       <% end %>
